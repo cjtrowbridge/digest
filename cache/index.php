@@ -49,7 +49,7 @@ if(
           
           <div class="form-group">
             <label for="key">Key</label>
-            <input type="text" class="form-control" id="key" name="key" <?php if(isset($_REQUEST['key'])){?> value="<?php echo $_REQUEST['key']; ?>"<?php} ?>>
+            <input type="text" class="form-control" id="key" name="key" <?php if(isset($_REQUEST['key'])){?> value="<?php echo $_REQUEST['key']; ?>"<?php  ?>>
           </div>
           
           <div class="form-group">
