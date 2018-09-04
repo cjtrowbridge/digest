@@ -18,7 +18,54 @@ if(
   isset($_REQUEST['key']) &&
   $_REQUEST['key'] == $Key
 ){
-  if(isset($_REQUEST['add'])){
+  if(
+    isset($_REQUEST['AddURL'])&&
+    $_REQUEST['AddURL'] != ''
+  ){
     file_put_contents('whitelist.php','$Whitelist[]="'.$_REQUEST['add'].'";'.PHP_EOL,FILE_APPEND);
+    header('Location: ./');
+    exit;
   }
 }
+
+?><!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Digest Manager</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>Digest Manager</h1>
+        
+        <form action="index.php" method="GET">
+          
+          <div class="form-group">
+            <label for="key">Key</label>
+            <input type="text" class="form-control" id="key" name="key" <?php if(isset($_REQUEST['key']))){?> value="<?php echo $_REQUEST['key']; ?>"<?php} ?>>
+          </div>
+          
+          <div class="form-group">
+            <label for="AddURL">Add URL</label>
+            <input type="text" class="form-control" id="AddURL" name="AddURL">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+      </div>
+
+    </main><!-- /.container -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
