@@ -69,7 +69,7 @@ if(
           echo '<h2>Whitelist:</h2>';
           echo '<ul>';
           foreach($Whitelist as $Key=> $Value){
-            echo '<li><a href="'.$Value.'">'.$Value.'</a></li>';
+            echo '<li>(<a href="./?key='.$_REQUEST['key'].'&refresh='.urlencode($Value).'">Refresh</a>) (<a href="./?key='.$_REQUEST['key'].'&refresh='.urlencode($Value).'">Remove</a>) <a href="'.$Value.'">'.$Value.'</a></li>';
           }
           echo '</ul>';
         }
