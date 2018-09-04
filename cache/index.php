@@ -22,7 +22,7 @@ if(
     isset($_REQUEST['AddURL'])&&
     $_REQUEST['AddURL'] != ''
   ){
-    file_put_contents('whitelist.php','$Whitelist[]="'.$_REQUEST['add'].'";'.PHP_EOL,FILE_APPEND);
+    file_put_contents('whitelist.php','$Whitelist[]="'.$_REQUEST['AddURL'].'";'.PHP_EOL,FILE_APPEND);
     header('Location: ./?key='.$_REQUEST['key']);
     exit;
   }
