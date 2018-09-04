@@ -67,9 +67,11 @@ if(
           $_REQUEST['key'] == $Key
         ){
           echo '<h2>Whitelist:</h2>';
+          echo '<ul>';
           foreach($Whitelist as $Key=> $Value){
-            echo '<p><a href="'.$Value.'">'.$Value.'</a></p>';
+            echo '<li><a href="'.$Value.'">'.$Value.'</a></li>';
           }
+          echo '</ul>';
         }
         
         ?>
