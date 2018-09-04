@@ -60,6 +60,20 @@ if(
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         
+        <?php
+        
+        if(
+          isset($_REQUEST['key']) &&
+          $_REQUEST['key'] == $Key
+        ){
+          echo '<h2>Whitelist:</h2>';
+          foreach($Whitelist as $Key=> $Value){
+            echo '<p><a href="'.$Value.'">'.$Value.'</a></p>';
+          }
+        }
+        
+        ?>
+        
       </div>
 
     </main><!-- /.container -->
